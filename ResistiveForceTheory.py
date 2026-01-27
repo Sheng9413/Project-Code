@@ -43,7 +43,7 @@ for step in range(num_steps):
     
     for i in range(N):
         #euler time stepping
-        x_after = x_before[i] + U_avg * t
+        x_after = x_before[i] + U_avg * dt
         y_after = b * np.sin(k * x_after - omega * t)
         
         x_positions[i] = x_after
@@ -100,3 +100,4 @@ ani = animation.FuncAnimation(fig_simple, animate_simple,frames=frames_to_show,i
 plt.tight_layout()
 plt.show()
 ani.save('RFT4.gif', writer=animation.PillowWriter(fps=20, bitrate=1800))
+
